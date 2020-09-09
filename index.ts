@@ -17,7 +17,7 @@ app.use(fileUpload({
 
 //add other middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 app.use('/photos', express.static('photos'));
@@ -39,12 +39,13 @@ app.get('/allPhotos', (req, res) => {
 
 app.post('/add', async (req, res) => {
     try {
-        if(!req.files) {
+        if (!req.files) {
             res.send({
                 status: false,
                 message: 'No file uploaded'
             });
         } else {
+
             const image = req.files.file;
             console.log(image);
             image.mv('./photos/' + image.name);
