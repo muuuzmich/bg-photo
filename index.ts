@@ -27,6 +27,9 @@ app.get('/', (req, res) => {
 
 app.get('/allPhotos', (req, res) => {
     const fileList = [];
+    if (!fs.existsSync('./photos')){
+        fs.mkdirSync('./photos');
+    }
     fs.readdir('./photos', (err, files) => {
         files.forEach(file => {
             fileList.push(file);
