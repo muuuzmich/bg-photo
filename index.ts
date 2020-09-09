@@ -56,6 +56,6 @@ app.post('/add', async (req, res) => {
     }
 })
 
-app.listen(3000, () => {
+app.listen(process.env.port || 3000, () => {
     console.log(`Example app listening at http://localhost:3000`)
 })
