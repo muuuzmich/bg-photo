@@ -6,7 +6,6 @@ const express = require('express');
 
 const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
 
 const app = new express();
 
@@ -18,7 +17,6 @@ app.use(fileUpload({
 //add other middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(morgan('dev'));
 
 app.use('/photos', express.static('photos'));
 app.use('/static', express.static('static'));
