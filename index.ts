@@ -32,6 +32,11 @@ app.get('/allPhotos', (req, res) => {
     }
     fs.readdir('./photos', (err, files) => {
         files.forEach(file => {
+            console.log(file);
+            
+            if(file === '.DS_Store'){
+                return;
+            }
             fileList.push(file);
         });
         res.send(fileList).status(200);
@@ -46,11 +51,10 @@ app.post('/add', async (req, res) => {
                 message: 'No file uploaded'
             });
         } else {
-
             const image = req.files.file;
             console.log(image);
             image.mv('./photos/' + image.name);
-            res.send('./photos/' + image.name).status(200);
+            res.send(image.name).status(200);
         }
     } catch (err) {
         res.status(500).send(err);

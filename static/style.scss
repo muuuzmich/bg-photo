@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: grid;
+    grid: repeat(1, 1fr) / auto-flow 1fr;
+    height: 100%;
+    overflow: hidden;
+    div {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    &[data-style="2"] {
+        grid: repeat(3, 1fr) / auto-flow 1fr;
+    }
+    &[data-style="3"] {
+        grid: repeat(6, 1fr) / repeat(6, 1fr);
+    }
+    &[data-style="4"] {
+        grid: repeat(6, 1fr) / repeat(8, 1fr);
+    }
+    &[data-style="5"] {
+        grid: repeat(9, 1fr) / repeat(8, 1fr);
+    }
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.uploadButton {
+    height: 10vh;
+    width: 20vw;
+    min-width: 50%;
+    border-radius: 10vh;
+    text-align: center;
+    line-height: 10vh;
+    top: 80%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    cursor: pointer;
+    background: lightgray;
+    display: none;
+    
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+#fileInput{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    overflow: hidden;
+    display: block;
+}
