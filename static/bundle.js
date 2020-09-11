@@ -1885,7 +1885,9 @@ const renderPhotos = (photos, filler = false) => {
     if (uploadedPhotos.length > 48) {
         container.dataset.style = 5;
     }
-    fillWithRandom();
+    if(uploadedPhotos.length > 4){
+        fillWithRandom();
+    }
 }
 
 const fillWithRandom = () => {
