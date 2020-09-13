@@ -8,6 +8,7 @@ body {
 body {
     padding: 0;
     margin: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 main {
@@ -31,6 +32,9 @@ main {
     &[data-style="5"] {
         grid: repeat(9, 1fr) / repeat(8, 1fr);
     }
+    &[data-style="6"] {
+        grid: repeat(12, 1fr) / repeat(12, 1fr);
+    }
 }
 
 img {
@@ -46,14 +50,14 @@ img {
     border-radius: 10vh;
     text-align: center;
     line-height: 10vh;
-    top: 80%;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
     position: absolute;
     cursor: pointer;
-    background: lightgray;
+    background: linear-gradient(to top, #bcbec0, #fff);
     display: none;
     
     @media screen and (max-width: 768px) {
